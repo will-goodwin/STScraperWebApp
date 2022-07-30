@@ -14,22 +14,24 @@ module.exports = async function (context, req) {
 }
 */
 
+/** 
 module.exports = async function (context, req) {
     context.res.json({
         text: "Hello from the API"
     });
 };
+*/
 
-/**
+
 const axios = require("axios")
 const cheerio = require("cheerio")
 
-module.exports = async function getIFCCenter(context, req) {
+module.exports = async function (context, req) {
     try {
         const response = await axios.get(
             "https://www.ifccenter.com/"
         )
-        console.log(response)
+        context.log(response)
 
         const $ = cheerio.load(response.data)
         const shows = $(".showtimes") //only 1 of these classes
@@ -53,4 +55,3 @@ module.exports = async function getIFCCenter(context, req) {
         console.error(error)
     }
 }
- */
