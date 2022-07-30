@@ -10,8 +10,10 @@ module.exports = async function (context, req) {
         // status: 200, /* Defaults to 200 */
         body: responseMessage
     };
-
-    context.res.json({
-        text: "Hello from the API - Will"
-    });
 }
+
+module.exports = async function (context, req) {
+    context.res.json({
+        text: "Hello from the API"
+    });
+};
