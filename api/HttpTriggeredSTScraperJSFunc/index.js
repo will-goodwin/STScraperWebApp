@@ -74,18 +74,22 @@ module.exports = async function (context, req) {
             if ($(allTodayAnchors[i]).hasClass("title")) {
                 //titleGate = 1
                 movieInd++
-                movieTitlesArr[movieInd] = $(allTodayAnchors[i]).text()
+                if ($(allTodayAnchors[i]).text()) {
+                    movieTitlesArr[movieInd] = $(allTodayAnchors[i]).text()
+                }
             }
             else  {
                 //titleGate = 0
-                movieTimesArr[movieInd] += $(allTodayAnchors[i]).text() + " "
+                if ($(allTodayAnchors[i]).text()) {
+                    movieTimesArr[movieInd] += $(allTodayAnchors[i]).text() + " "
+                }
             }
         }
 
         for(let i = 0; i < movieTitlesArr.length; i++) {
             //console.log(movieTitlesArr[i])
             //console.log(movieTimesArr[i])
-            allMovieString += movieTitlesArr[i] + ": " + movieTimesArr[i] + " "
+            allMovieString += movieTitlesArr[i] + ": " + movieTimesArr[i] + "\n"
         }
 
         context.res.json({
