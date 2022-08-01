@@ -88,7 +88,13 @@ module.exports = async function (context, req) {
         for(let i = 0; i < movieTitlesArr.length; i++) {
             //console.log(movieTitlesArr[i])
             //console.log(movieTimesArr[i])
-            allMovieString += movieTitlesArr[i] + ": " + movieTimesArr[i] + "\n"
+            if (movieTitlesArr[i]) {
+                allMovieString += movieTitlesArr[i] + ": "
+            }
+            if (movieTimesArr[i]) {
+                allMovieString += movieTimesArr[i] + "\n"
+            }
+            //allMovieString += movieTitlesArr[i] + ": " + movieTimesArr[i] + "\n"
         }
 
         context.res.json({
