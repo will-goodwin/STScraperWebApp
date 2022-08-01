@@ -44,9 +44,9 @@ module.exports = async function (context, req) {
             let movieTitleAndTimes = $(todayDets[i]).find("a")
             let movieTitle = $(movieTitleAndTimes[0]).text()
             let movieTimes = $(todayDets[i]).find(".times").find("a").text()
-            console.log(movieTitle)
-            console.log(movieTimes)
-            allMovieString += movieTitle + " " + movieTimes + " "
+            //console.log(movieTitle)
+            //console.log(movieTimes)
+            allMovieString += movieTitle + " " + movieTimes + "\n"
         }
 
         //context.res.json({
