@@ -73,13 +73,13 @@ module.exports = async function (context, req) {
         for(let i = 0; i < allTodayAnchors.length; i++) {
             if ($(allTodayAnchors[i]).hasClass("title")) {
                 movieInd++
-                if (typeof $(allTodayAnchors[i]).text().trim() !== 'undefined') {
-                    movieTitlesArr[movieInd] = $(allTodayAnchors[i]).text()
+                if ($(allTodayAnchors[i]).text().trim() && typeof $(allTodayAnchors[i]).text().trim() !== 'undefined') {
+                    movieTitlesArr[movieInd] = $(allTodayAnchors[i]).text().trim()
                 }
             }
             else  {
-                if (typeof $(allTodayAnchors[i]).text().trim() !== 'undefined') {
-                    movieTimesArr[movieInd] += $(allTodayAnchors[i]).text().trim() + " "
+                if ($(allTodayAnchors[i]).text().trim() && typeof $(allTodayAnchors[i]).text().trim() !== 'undefined') {
+                    movieTimesArr[movieInd] += $(allTodayAnchors[i]).text().trim()
                 }
             }
         }
