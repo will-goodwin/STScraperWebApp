@@ -40,6 +40,7 @@ module.exports = async function (context, req) {
         let todayDets = $(todayDivs[0]).find(".details") //"details" for all the Movies for Today
         //let allMovieString = ""
 
+        allMovieString += "IFC Center:\n"
         for (let i = 0; i < todayDets.length; i++) {
             let movieTitleAndTimes = $(todayDets[i]).find("a")
             let movieTitle = $(movieTitleAndTimes[0]).text()
@@ -68,24 +69,22 @@ module.exports = async function (context, req) {
         const allTodayAnchors = $(allTodaysMovies[0]).find("a") //all the anchors for today's movies - Title == has "".title", Showtimes != has ".title"
         let movieTitlesArr = []
         let movieTimesArr = []
-        //let titleGate = 0
         let movieInd = 0
         for(let i = 0; i < allTodayAnchors.length; i++) {
             if ($(allTodayAnchors[i]).hasClass("title")) {
-                //titleGate = 1
                 movieInd++
-                if ($(allTodayAnchors[i]).text()) {
+                if (typeof $(allTodayAnchors[i]).text() !== 'undefined') {
                     movieTitlesArr[movieInd] = $(allTodayAnchors[i]).text()
                 }
             }
             else  {
-                //titleGate = 0
-                if ($(allTodayAnchors[i]).text()) {
+                if (typeof $(allTodayAnchors[i]).text() !== 'undefined') {
                     movieTimesArr[movieInd] += $(allTodayAnchors[i]).text() + " "
                 }
             }
         }
 
+        allMovieString += "\nMetrograph:\n"
         for(let i = 0; i < movieTitlesArr.length; i++) {
             //console.log(movieTitlesArr[i])
             //console.log(movieTimesArr[i])
