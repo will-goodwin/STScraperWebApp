@@ -79,7 +79,7 @@ module.exports = async function (context, req) {
             }
             else  {
                 if ($(allTodayAnchors[i]).text().trim() && typeof $(allTodayAnchors[i]).text().trim() !== 'undefined') {
-                    movieTimesArr[movieInd] += $(allTodayAnchors[i]).text().trim().substring(2)
+                    movieTimesArr[movieInd] += $(allTodayAnchors[i]).text().trim()
                 }
             }
         }
@@ -92,7 +92,7 @@ module.exports = async function (context, req) {
                 allMovieString += movieTitlesArr[i] + ": "
             }
             if (movieTimesArr[i] && (typeof movieTimesArr[i] !== 'undefined')) {
-                allMovieString += movieTimesArr[i] + "\n"
+                allMovieString += movieTimesArr[i].substr(9) + "\n"
             }
             //allMovieString += movieTitlesArr[i] + ": " + movieTimesArr[i] + "\n"
         }
