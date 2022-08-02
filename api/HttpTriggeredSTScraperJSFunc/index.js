@@ -88,13 +88,11 @@ module.exports = async function (context, req) {
         for(let i = 0; i < movieTitlesArr.length; i++) {
             //console.log(movieTitlesArr[i])
             //console.log(movieTimesArr[i])
-            if (movieTitlesArr[i]) {
-                //allMovieString += movieTitlesArr[i] + ": "
-                allMovieString += movieTitlesArr[i].trim()
+            if (movieTitlesArr[i] && (typeof movieTitlesArr[i] !== 'undefined')) {
+                allMovieString += movieTitlesArr[i] + ": "
             }
-            if (movieTimesArr[i]) {
-                //allMovieString += movieTimesArr[i].trim() + "\n"
-                allMovieString += movieTimesArr[i].trim()
+            if (movieTimesArr[i] && (typeof movieTimesArr[i] !== 'undefined')) {
+                allMovieString += movieTimesArr[i].trim() + "\n"
             }
             //allMovieString += movieTitlesArr[i] + ": " + movieTimesArr[i] + "\n"
         }
