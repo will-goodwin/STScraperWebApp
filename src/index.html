@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Vanilla JavaScript App</title>
+    <title>NYC Independent Theater Showtimes for Today!</title>
 </head>
 
 <body>
     <main>
-    <h1>Vanilla JavaScript App by Will</h1>
-    <p>Loading content from the API: <br><b id="name">...</b></p>
+      <p><b id="name"></b></p>
     </main>
 
     <script>
@@ -20,21 +19,6 @@
         document.querySelector('#name').textContent = text;
     }())
     </script>
-    <center>
-      <h2>Theater Showtimes</h2>
-      <table border="1" cellspacing="0" cellpadding="12" >
-        <tr>
-          <th>Movie:</th>
-          <th>Showtimes:</th>
-        </tr>
-        <tr>
-          <td>Logan</td>
-          <td>7:30 10:15</td>
-        </tr>
-      </table>
-      <br><br>
-      <button type="button">Download Showtimes</button>
-    </center>
 </body>
 
 </html>
