@@ -92,7 +92,7 @@ module.exports = async function (context, req) {
                 allMovieString += movieTitlesArr[i] + ": "
             }
             if (movieTimesArr[i] && (typeof movieTimesArr[i] !== 'undefined')) {
-                allMovieString += movieTimesArr[i].trim() + "\n"
+                allMovieString += movieTimesArr[i].substr(2) + "\n"
             }
             //allMovieString += movieTitlesArr[i] + ": " + movieTimesArr[i] + "\n"
         }
