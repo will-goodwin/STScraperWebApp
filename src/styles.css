@@ -24,3 +24,21 @@ script, b, p {
   white-space: pre-wrap;
   color: aqua;
 }
+
+.wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.background {
+  opacity: 0.4;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  position: relative;
+}
