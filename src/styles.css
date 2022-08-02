@@ -22,4 +22,5 @@ main > h1 {
 
 script, b, p {
   white-space: pre-wrap;
+  color: aqua;
 }
