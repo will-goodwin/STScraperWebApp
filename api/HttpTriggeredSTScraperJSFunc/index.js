@@ -28,14 +28,6 @@ const cheerio = require("cheerio")
 
 module.exports = async function (context, req) {
     let allMovieString = ""
-
-    let table = document.createElement('table')
-    let row = table.insertRow(0)
-    let col = row.insertCell(0)
-    col.innerHTML = "Jurassic Park"
-    col = row.insertCell(1)
-    col.innerHTML = "1:30 4:30"
-
     try {
         const response = await axios.get(
             "https://www.ifccenter.com/"
@@ -172,7 +164,7 @@ module.exports = async function (context, req) {
         */
 
         context.res.json({
-            text: table
+            text: allMovieString
         });
 
     } catch (error) {
