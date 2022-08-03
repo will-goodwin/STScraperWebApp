@@ -47,7 +47,7 @@ module.exports = async function (context, req) {
             let movieTimes = $(todayDets[i]).find(".times").find("a").text()
             //console.log(movieTitle)
             //console.log(movieTimes)
-            allMovieString += movieTitle + " " + movieTimes + "\n"
+            allMovieString += movieTitle.toLocaleUpperCase() + " " + movieTimes + "\n"
         }
 
         //context.res.json({
@@ -89,7 +89,7 @@ module.exports = async function (context, req) {
             //console.log(movieTitlesArr[i])
             //console.log(movieTimesArr[i])
             if (movieTitlesArr[i] && (typeof movieTitlesArr[i] !== 'undefined')) {
-                allMovieString += movieTitlesArr[i] + ": "
+                allMovieString += movieTitlesArr[i].toLocaleUpperCase() + ": "
             }
             if (movieTimesArr[i] && (typeof movieTimesArr[i] !== 'undefined')) {
                 allMovieString += movieTimesArr[i].substr(9) + "\n"
