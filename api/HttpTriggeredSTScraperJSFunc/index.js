@@ -112,6 +112,11 @@ module.exports = async function (context, req) {
         const showtimes = $(".showtimes-wrapper")
         
         allMovieString += "\nAngelika Film Center-Angelika New York:\n"
+        for (let i = 0; i < movieTitles.length; i++) {
+            allMovieString += movieTitles[i].find("a").text();
+            allMovieString += "\n"
+        }
+        /** 
         for (let i=0; i < nowPlayingArr.length; i++) {
             allMovieString += nowPlayingArr[i].find(".name").find("a").text().trim()
             let showtimes = nowPlayingArr[i].find(".showtimes-wrapper").find("a")
@@ -120,6 +125,7 @@ module.exports = async function (context, req) {
             }
             allMovieString += "\n"
         }
+        */
 
         context.res.json({
             text: allMovieString
