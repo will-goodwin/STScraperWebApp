@@ -47,7 +47,7 @@ module.exports = async function (context, req) {
             let movieTimes = $(todayDets[i]).find(".times").find("a").text()
             //console.log(movieTitle)
             //console.log(movieTimes)
-            allMovieString += movieTitle.toLocaleUpperCase() + " " + movieTimes + "\n"
+            allMovieString += movieTitle.toLocaleUpperCase() + ": " + movieTimes + "\n"
         }
 
         //context.res.json({
@@ -134,7 +134,7 @@ module.exports = async function (context, req) {
         }
 
         for (let i = 0; i < movieTitlesArr.length; i++) {
-            allMovieString += movieTitlesArr[i] + " "
+            allMovieString += movieTitlesArr[i] + ": "
             allMovieString += movieTimesArr[i].substr(9) + "\n"
         }
 
