@@ -113,7 +113,7 @@ module.exports = async function (context, req) {
         const todayMovies = $(todayDiv[0]).find('p')
         let movieTitlesArr = []
         let movieTimesArr = []
-        //let movieTimesArrInd = 0
+        let movieTimesArrInd = 0
 
         //This strategy avoids the nested for loop but since a single space following the 
         // time is not coded into the HTML, all the showtimes get pushed together and are
