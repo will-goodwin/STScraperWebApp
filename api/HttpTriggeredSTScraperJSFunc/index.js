@@ -108,10 +108,10 @@ module.exports = async function (context, req) {
         
         const $ = cheerio.load(response.data)
         const todayDiv = $('div #tabs-0')
-        const todayMovies = todayDiv[0].find('p')
+        const todayMovies = $(todayDiv[0]).find('p')
         let movieTitlesArr = []
         for (let i = 0; i < todayMovies.length; i++) {
-            movieTitlesArr[i] = todayMovies[i].find('strong').find('a').text()
+            movieTitlesArr[i] = $(todayMovies[i]).find('strong').find('a').text()
         }
 
         for (let i = 0; i < movieTitlesArr.length; i++) {
