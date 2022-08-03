@@ -26,12 +26,14 @@ module.exports = async function (context, req) {
 const axios = require("axios")
 const cheerio = require("cheerio")
 
-let mtable = document.getElementById('name')
+let movieTable = document.getElementById('name')
+/** 
 let row = table.insertRow(0)
 let col = row.insertCell(0)
 col.innerHTML = "JPark"
 col = row.insertCell(1)
 col.innerHTML = "10:30"
+*/
 
 module.exports = async function (context, req) {
     let allMovieString = ""
