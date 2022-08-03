@@ -28,6 +28,14 @@ const cheerio = require("cheerio")
 
 module.exports = async function (context, req) {
     let allMovieString = ""
+
+    let table = document.createElement('table')
+    let row = table.insertRow(0)
+    let col = row.insertCell(0)
+    col.innerHTML = "Jurassic Park"
+    col = row.insertCell(1)
+    col.innerHTML = "1:30 4:30"
+
     try {
         const response = await axios.get(
             "https://www.ifccenter.com/"
@@ -88,13 +96,6 @@ module.exports = async function (context, req) {
         for(let i = 0; i < movieTitlesArr.length; i++) {
             //console.log(movieTitlesArr[i])
             //console.log(movieTimesArr[i])
-            let table = document.createElement('table')
-            let row = table.insertRow(0)
-            let col = row.insertCell(0)
-            col.innerHTML = movieTitlesArr[0]
-            col = row.insertCell(1)
-            col.innerHTML = movieTimesArr[0]
-
             if (movieTitlesArr[i] && (typeof movieTitlesArr[i] !== 'undefined')) {
                 allMovieString += movieTitlesArr[i].toLocaleUpperCase() + ":\n"
             }
@@ -171,7 +172,7 @@ module.exports = async function (context, req) {
         */
 
         context.res.json({
-            text: allMovieString
+            text: table
         });
 
     } catch (error) {
