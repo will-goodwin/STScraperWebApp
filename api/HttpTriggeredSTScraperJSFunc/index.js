@@ -26,14 +26,14 @@ module.exports = async function (context, req) {
 const axios = require("axios")
 const cheerio = require("cheerio")
 
-module.exports = async function (context, req) {
-    let mtable = document.getElementById('name')
-    let row = table.insertRow(0)
-    let col = row.insertCell(0)
-    col.innerHTML = "JPark"
-    col = row.insertCell(1)
-    col.innerHTML = "10:30"
+let mtable = document.getElementById('name')
+let row = table.insertRow(0)
+let col = row.insertCell(0)
+col.innerHTML = "JPark"
+col = row.insertCell(1)
+col.innerHTML = "10:30"
 
+module.exports = async function (context, req) {
     let allMovieString = ""
     try {
         const response = await axios.get(
@@ -171,8 +171,8 @@ module.exports = async function (context, req) {
         */
 
         context.res.json({
-            //text: allMovieString
-            table: mtable
+            text: allMovieString
+            //table: mtable
         });
 
     } catch (error) {

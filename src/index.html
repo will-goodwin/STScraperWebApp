@@ -25,7 +25,7 @@
       <script>
       (async function() {
           const { text } = await( await fetch(`/api/HttpTriggeredSTScraperJSFunc`)).json();
-          document.querySelector('#name').innerHTML = table;
+          document.querySelector('#name').textContent = text;
       }())
       </script>
     </div>
