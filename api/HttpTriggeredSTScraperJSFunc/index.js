@@ -40,7 +40,7 @@ module.exports = async function (context, req) {
         let todayDets = $(todayDivs[0]).find(".details") //"details" for all the Movies for Today
         //let allMovieString = ""
 
-        allMovieString += "IFC Center:\n\n"
+        allMovieString += "IFC Center:\n--------------\n"
         for (let i = 0; i < todayDets.length; i++) {
             let movieTitleAndTimes = $(todayDets[i]).find("a")
             let movieTitle = $(movieTitleAndTimes[0]).text()
@@ -84,7 +84,7 @@ module.exports = async function (context, req) {
             }
         }
 
-        allMovieString += "\nMETROGRAPH:\n\n"
+        allMovieString += "\nMETROGRAPH:\n--------------\n"
         for(let i = 0; i < movieTitlesArr.length; i++) {
             //console.log(movieTitlesArr[i])
             //console.log(movieTimesArr[i])
@@ -106,7 +106,7 @@ module.exports = async function (context, req) {
             "https://filmforum.org/now_playing"
         )
         
-        allMovieString += "\nFILM FORUM:\n\n"
+        allMovieString += "\nFILM FORUM:\n--------------\n"
 
         const $ = cheerio.load(response.data)
         const todayDiv = $('div #tabs-0')
