@@ -18,13 +18,13 @@
     <div class="content">
       <main>
         <h1>NYC Showtimes Today!</h1>
-        <p><b id="name"></b></p>
+        <table id="mTab">
       </main>
   
       <script>
       (async function() {
           const { text } = await( await fetch(`/api/HttpTriggeredSTScraperJSFunc`)).json();
-          document.querySelector('#name').textContent = text;
+          document.querySelector('#mTab').innerHTML = text;
       }())
       </script>
     </div>
