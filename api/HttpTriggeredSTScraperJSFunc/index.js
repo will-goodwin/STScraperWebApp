@@ -106,16 +106,26 @@ module.exports = async function (context, req) {
             "https://filmforum.org/now_playing"
         )
         
+        allMovieString += "\nFilm Forum:\n"
+
         const $ = cheerio.load(response.data)
         const todayDiv = $('div #tabs-0')
         const todayMovies = $(todayDiv[0]).find('p')
         let movieTitlesArr = []
+        let movieTimesArr = []
+        let movieTimesArrInd = 0
         for (let i = 0; i < todayMovies.length; i++) {
             movieTitlesArr[i] = $(todayMovies[i]).find('strong').find('a').text()
+            let todaySTs = $(todayMovies[i]).find('span')
+            for(let j = 0; j < todaySTs.length; j++) {
+                movieTimesArr[movieTimesArrInd] += $(todaySTs[j]).text() + " "
+            }
+            movieTimesArrInd++
         }
 
         for (let i = 0; i < movieTitlesArr.length; i++) {
-            allMovieString += movieTitlesArr[i] + '/n'
+            allMovieString += movieTitlesArr[i] + " "
+            allMovieString += movieTitlesArr[i] + "\n"
         }
 
         /** 
