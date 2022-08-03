@@ -108,6 +108,16 @@ module.exports = async function (context, req) {
         //console.log(response)
         
         const $ = cheerio.load(response.data)
+        
+        const namesArr = $(".name")
+        allMovieString += "\nAngelika Film Center-Angelika New York:\n"
+        for (let i = 0; i < namesArr.length; i++) {
+            allMovieString += namesArr[i].text()
+        }
+
+
+
+        /** 
         const nowPlayingArr = $(".film.status-now_playing")
         const movieTitles = $(".name").find("a")
         const showtimes = $(".showtimes-wrapper")
@@ -117,9 +127,6 @@ module.exports = async function (context, req) {
         for (let i = 0; i < movieTitles.length; i++) {
             allMovieString += movieTitles[i].text();
         }
-        
-
-        /** 
         for (let i=0; i < nowPlayingArr.length; i++) {
             allMovieString += nowPlayingArr[i].find(".name").find("a").text().trim()
             let showtimes = nowPlayingArr[i].find(".showtimes-wrapper").find("a")
