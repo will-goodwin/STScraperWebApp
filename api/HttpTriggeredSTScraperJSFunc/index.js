@@ -107,13 +107,14 @@ module.exports = async function (context, req) {
         )
         allMovieString += "\nAngelika\n"
         //console.log(response)
-        /** 
+        
         const $ = cheerio.load(response.data)
         const nowPlayingArr = $(".film.status-now_playing")
         const movieTitles = $(".name")
         const showtimes = $(".showtimes-wrapper")
         
         allMovieString += "\nAngelika Film Center-Angelika New York:\n"
+        /**
         for (let i = 0; i < movieTitles.length; i++) {
             allMovieString += movieTitles[i].find("a").text();
             allMovieString += "\n"
