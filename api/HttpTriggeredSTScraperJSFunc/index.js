@@ -104,4 +104,33 @@ module.exports = async function (context, req) {
     } catch (error) {
         console.error(error)
     }
+
+    try {
+        const response = await axios.get(
+            "https://www.angelikafilmcenter.com/nyc/showtimes-and-tickets/now-playing"
+        )
+        //console.log(response)
+
+        const $ = cheerio.load(response.data)
+        const nowPlayingArr = $(".film.status-now_playing")
+        const movieTitles = $(".name")
+        const showtimes = $(".showtimes-wrapper")
+        
+        allMovieString += "\nAngelika Film Center-Angelika New York:\n"
+        for (let i=0; i < nowPlayingArr.length; i++) {
+            allMovieString += nowPlayingArr[i].find(".name").find("a").text().trim()
+            let showtimes = nowPlayingArr[i].find(".showtimes-wrapper").find("a")
+            for (let j = 0; j < showtimes.length; j++) {
+                allMovieString += showtimes[i].text().trim() + " " 
+            }
+            allMovieString += "\n"
+        }
+
+        context.res.json({
+            text: allMovieString
+        });
+
+    } catch (error) {
+        console.error(error)
+    }
 }
