@@ -113,7 +113,12 @@ module.exports = async function (context, req) {
         const todayMovies = $(todayDiv[0]).find('p')
         let movieTitlesArr = []
         let movieTimesArr = []
-        let movieTimesArrInd = 0
+        //let movieTimesArrInd = 0
+        for (let i = 0; i < todayMovies.length; i++) {
+            movieTitlesArr[i] = $(todayMovies[i]).find('strong').find('a').text()
+            movieTimesArr[i] = $(todayMovies[i]).find('span').text()
+        }
+        /** 
         for (let i = 0; i < todayMovies.length; i++) {
             movieTitlesArr[i] = $(todayMovies[i]).find('strong').find('a').text()
             let todaySTs = $(todayMovies[i]).find('span')
@@ -122,10 +127,11 @@ module.exports = async function (context, req) {
             }
             movieTimesArrInd++
         }
+        */
 
         for (let i = 0; i < movieTitlesArr.length; i++) {
             allMovieString += movieTitlesArr[i] + " "
-            allMovieString += movieTitlesArr[i] + "\n"
+            allMovieString += movieTimesArr[i] + "\n"
         }
 
         /** 
