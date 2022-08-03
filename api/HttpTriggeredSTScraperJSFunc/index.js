@@ -101,12 +101,13 @@ module.exports = async function (context, req) {
     }
 
     try {
-        /** 
+        
         const response = await axios.get(
             "https://www.angelikafilmcenter.com/nyc/showtimes-and-tickets/now-playing"
         )
+        allMovieString += "\nAngelika\n"
         //console.log(response)
-
+        /** 
         const $ = cheerio.load(response.data)
         const nowPlayingArr = $(".film.status-now_playing")
         const movieTitles = $(".name")
@@ -118,6 +119,7 @@ module.exports = async function (context, req) {
             allMovieString += "\n"
         }
         */
+
         /** 
         for (let i=0; i < nowPlayingArr.length; i++) {
             allMovieString += nowPlayingArr[i].find(".name").find("a").text().trim()
