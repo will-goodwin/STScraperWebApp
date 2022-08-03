@@ -92,7 +92,7 @@ module.exports = async function (context, req) {
                 allMovieString += movieTitlesArr[i].toLocaleUpperCase() + ": "
             }
             if (movieTimesArr[i] && (typeof movieTimesArr[i] !== 'undefined')) {
-                allMovieString += movieTimesArr[i].substr(9) + "\n"
+                allMovieString += movieTimesArr[i].substr(9).toLocaleUpperCase() + "\n"
             }
             //allMovieString += movieTitlesArr[i] + ": " + movieTimesArr[i] + "\n"
         }
