@@ -112,7 +112,7 @@ module.exports = async function (context, req) {
         const namesArr = $(".name")
         allMovieString += "\nAngelika Film Center-Angelika New York:\n"
         for (let i = 0; i < namesArr.length; i++) {
-            allMovieString += namesArr[i].text()
+            //allMovieString += namesArr[i].text()
         }
 
 
