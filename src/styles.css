@@ -23,13 +23,8 @@ main > h1 {
 
 script, b, p {
   white-space: pre-wrap;
-  color: aqua;
-}
-
-title {
-  font:bold;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color:chocolate;
+  color:black;
+  text-align: center;
 }
 
 .wrap {
