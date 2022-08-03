@@ -135,7 +135,7 @@ module.exports = async function (context, req) {
 
         for (let i = 0; i < movieTitlesArr.length; i++) {
             allMovieString += movieTitlesArr[i] + " "
-            allMovieString += movieTimesArr[i] + "\n"
+            allMovieString += movieTimesArr[i].substr(9) + "\n"
         }
 
         /** 
