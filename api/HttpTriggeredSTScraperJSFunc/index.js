@@ -103,21 +103,27 @@ module.exports = async function (context, req) {
     try {
         
         const response = await axios.get(
-            "https://www.angelikafilmcenter.com/nyc/showtimes-and-tickets/now-playing"
+            "https://filmforum.org/now_playing"
         )
-        //console.log(response)
         
         const $ = cheerio.load(response.data)
-        
+        const todayDiv = $('div #tabs-0')
+        const todayMovies = todayDiv[0].find('p')
+        let movieTitlesArr = []
+        for (let i = 0; i < todayMovies.length; i++) {
+            movieTitlesArr[i] = todayMovies[i].find('strong').find('a').text()
+        }
+
+        for (let i = 0; i < movieTitlesArr.length; i++) {
+            allMovieString += movieTitlesArr[i] + '/n'
+        }
+
+        /** 
         const namesArr = $(".name")
         allMovieString += "\nAngelika Film Center-Angelika New York:\n"
         for (let i = 0; i < namesArr.length; i++) {
             //allMovieString += namesArr[i].text()
         }
-
-
-
-        /** 
         const nowPlayingArr = $(".film.status-now_playing")
         const movieTitles = $(".name").find("a")
         const showtimes = $(".showtimes-wrapper")
