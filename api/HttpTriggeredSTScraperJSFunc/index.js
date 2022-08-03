@@ -27,12 +27,12 @@ const axios = require("axios")
 const cheerio = require("cheerio")
 
 module.exports = async function (context, req) {
-    let t = document.getElementsByTagName('table')
+    let mtable = document.getElementById('name')
     let row = table.insertRow(0)
     let col = row.insertCell(0)
-    col.innerHTML = movieTitlesArr[0]
+    col.innerHTML = "JPark"
     col = row.insertCell(1)
-    col.innerHTML = movieTimesArr[0]
+    col.innerHTML = "10:30"
 
     let allMovieString = ""
     try {
@@ -172,7 +172,7 @@ module.exports = async function (context, req) {
 
         context.res.json({
             //text: allMovieString
-            table: t
+            table: mtable
         });
 
     } catch (error) {
