@@ -96,11 +96,6 @@ module.exports = async function (context, req) {
             }
             //allMovieString += movieTitlesArr[i] + ": " + movieTimesArr[i] + "\n"
         }
-
-        context.res.json({
-            text: allMovieString
-        });
-
     } catch (error) {
         console.error(error)
     }
