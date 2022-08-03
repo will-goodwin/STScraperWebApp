@@ -101,6 +101,7 @@ module.exports = async function (context, req) {
     }
 
     try {
+        /** 
         const response = await axios.get(
             "https://www.angelikafilmcenter.com/nyc/showtimes-and-tickets/now-playing"
         )
@@ -116,6 +117,7 @@ module.exports = async function (context, req) {
             allMovieString += movieTitles[i].find("a").text();
             allMovieString += "\n"
         }
+        */
         /** 
         for (let i=0; i < nowPlayingArr.length; i++) {
             allMovieString += nowPlayingArr[i].find(".name").find("a").text().trim()
