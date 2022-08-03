@@ -114,11 +114,16 @@ module.exports = async function (context, req) {
         let movieTitlesArr = []
         let movieTimesArr = []
         //let movieTimesArrInd = 0
+
+        //This strategy avoids the nested for loop but since a single space following the 
+        // time is not coded into the HTML, all the showtimes get pushed together and are
+        // indistinguishable
+        /** 
         for (let i = 0; i < todayMovies.length; i++) {
             movieTitlesArr[i] = $(todayMovies[i]).find('strong').find('a').text()
             movieTimesArr[i] = $(todayMovies[i]).find('span').text()
         }
-        /** 
+        */
         for (let i = 0; i < todayMovies.length; i++) {
             movieTitlesArr[i] = $(todayMovies[i]).find('strong').find('a').text()
             let todaySTs = $(todayMovies[i]).find('span')
@@ -127,7 +132,6 @@ module.exports = async function (context, req) {
             }
             movieTimesArrInd++
         }
-        */
 
         for (let i = 0; i < movieTitlesArr.length; i++) {
             allMovieString += movieTitlesArr[i] + " "
