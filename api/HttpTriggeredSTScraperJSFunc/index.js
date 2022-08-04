@@ -26,8 +26,6 @@ module.exports = async function (context, req) {
 const axios = require("axios")
 const cheerio = require("cheerio")
 
-let movTable = document.getElementById("mTab")
-
 module.exports = async function (context, req) {
     let allMovieString = ""
     try {
@@ -164,23 +162,9 @@ module.exports = async function (context, req) {
             allMovieString += "\n"
         }
         */
-        let tableCont = ""
-
-        tableCont += `
-            <tr>
-                <th>Movie</th>
-                <th>Showtimes</th>
-            </tr>
-            <tr>
-                <td>Jurassic Park</td>
-                <td>10:30</td>
-            </tr>
-        `
-        movTable.innerHTML = tableCont
 
         context.res.json({
-            //text: allMovieString
-            text: movTable
+            text: allMovieString
         });
 
     } catch (error) {
