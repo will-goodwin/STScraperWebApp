@@ -6,12 +6,6 @@ test('basic test', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('NYC Showtimes Today!');
 })
 
-test('page title test', async ({ page }) => {
-  await page.goto('/');
-  await page.waitForSelector('title');
-  await expect(page.locator('title')).toContainText('NYC Showtimes');
-})
-
 test('background img visible test', async ({ page }) => {
   await page.goto('/');
   await page.waitForSelector('img');
@@ -26,6 +20,6 @@ test('background img src link test', async ({ page }) => {
 
 test('showtime text test', async ({ page }) => {
   await page.goto('/');
-  await page.waitForSelector('img');
-  await expect(page.locator('p')).toBeVisible()
+  await page.waitForSelector('b');
+  await expect(page.locator('b')).toBeVisible()
 })
