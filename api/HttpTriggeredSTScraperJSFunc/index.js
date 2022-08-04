@@ -18,11 +18,8 @@ module.exports = async function (context, req) {
         allMovieString += "IFC Center:\n--------------\n"
         for (let i = 0; i < todayDets.length; i++) {
             let movieTitleAndTimes = $(todayDets[i]).find("a")
-            //let movieTitle = $(movieTitleAndTimes[0]).text()
-            //let movieTimes = $(todayDets[i]).find(".times").find("a").text()
             movieTitlesArr[i] = $(movieTitleAndTimes[0]).text()
             movieTimesArr[i] = $(todayDets[i]).find(".times").find("a").text()
-            //allMovieString += movieTitle.toLocaleUpperCase() + ":\n" + movieTimes + "\n"
         }
 
         for (let i = 0; i < movieTitlesArr.length; i++) {
