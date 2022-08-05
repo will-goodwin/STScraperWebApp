@@ -19,7 +19,7 @@
   }
   
   main > h1 {
-
+    text-align: center;
     font-size: 1.5em;
   }
   
@@ -37,10 +37,6 @@
     position: relative;
   }
 
-  section {
-
-  }
-
   .bubble::after {
     content: '';
     border-top-left-radius: 50% 100%;
@@ -49,7 +45,7 @@
     bottom: 0;
     height: 85%;
     width: 100%;
-    background-color: black;
+    background-color: red;
     z-index: -1;
   }
 
