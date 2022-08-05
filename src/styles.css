@@ -84,7 +84,6 @@
     content: '';
     border-top-left-radius: 50% 100%;
     border-top-right-radius: 50% 100%;
-    position: absolute;
     bottom:0;
     height:85%;
     width: 100%;
