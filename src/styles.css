@@ -12,12 +12,18 @@
     overflow-x: hidden;
   }
   
-  main {
+  section {
     margin: auto;
     width: 60%;
     padding: 20px;
     position: relative;
     display: flex;
+  }
+
+  main {
+    margin: auto;
+    width: 60%;
+    padding: 20px;
   }
   
   main > h1 {
