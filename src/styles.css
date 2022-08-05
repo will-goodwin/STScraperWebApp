@@ -14,8 +14,10 @@
   
   main {
     margin: auto;
-    width: 50%;
+    width: 60%;
     padding: 20px;
+    position: relative;
+    display: flex;
   }
   
   main > h1 {
