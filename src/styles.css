@@ -28,11 +28,13 @@
   main > h1 {
     text-align: center;
     font-size: 1.5em;
+    z-index: +1;
   }
   
   script, b, p {
     white-space: pre-wrap;
     text-align: center;
+    z-index: +1;
   }
   
   .wrap {
