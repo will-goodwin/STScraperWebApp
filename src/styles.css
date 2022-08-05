@@ -9,6 +9,7 @@
     color: white;
     background-color: rgb(23, 22, 22);
     height: 100%;
+    overflow-x: hidden;
   }
   
   main {
@@ -37,10 +38,19 @@
   }
 
   section {
-    position: relative;
-    display: flex;
-    min-height: 400px;
-    padding: 100px;
+
+  }
+
+  .bubble::after {
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    position:absolute;
+    bottom: 0;
+    height: 85%;
+    width: 100%;
+    background-color: black;
+    z-index: -1;
   }
 
   .blue {
