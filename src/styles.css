@@ -35,3 +35,28 @@
   .content {
     position: relative;
   }
+
+  section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding: 100px 20vw;
+  }
+
+  .blue {
+    background: rgb(61, 61, 239);
+  }
+
+  .red {
+    background: rgb(237, 59, 59);
+  }
+
+  .green {
+    background: rgb(26, 178, 26);
+  }
+
+  .dark {
+    background: rgb(52, 51, 51);
+  }
