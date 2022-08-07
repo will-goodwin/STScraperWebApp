@@ -23,7 +23,7 @@ module.exports = async function (context, req) {
         }
 
         for (let i = 0; i < movieTitlesArr.length; i++) {
-            allMovieString += movieTitlesArr[i].toLocaleUpperCase() + ":\n@\n" + movieTimesArr[i] + "\n***\n"
+            allMovieString += movieTitlesArr[i].toLocaleUpperCase() + ":\n@\n" + movieTimesArr[i] + "\n---\n"
         }
 
     } catch (error) {
@@ -59,10 +59,10 @@ module.exports = async function (context, req) {
         allMovieString += "\nMETROGRAPH:\n--------------\n"
         for(let i = 0; i < movieTitlesArr.length; i++) {
             if (movieTitlesArr[i] && (typeof movieTitlesArr[i] !== 'undefined')) {
-                allMovieString += movieTitlesArr[i].toLocaleUpperCase() + ":\n"
+                allMovieString += movieTitlesArr[i].toLocaleUpperCase() + ":\n@\n"
             }
             if (movieTimesArr[i] && (typeof movieTimesArr[i] !== 'undefined')) {
-                allMovieString += movieTimesArr[i].substr(9).toLocaleUpperCase() + "\n"
+                allMovieString += movieTimesArr[i].substr(9).toLocaleUpperCase() + "\n---\n"
             }
         }
     } catch (error) {
@@ -103,8 +103,8 @@ module.exports = async function (context, req) {
         }
 
         for (let i = 0; i < movieTitlesArr.length; i++) {
-            allMovieString += movieTitlesArr[i] + ":\n"
-            allMovieString += movieTimesArr[i].substr(9) + "\n"
+            allMovieString += movieTitlesArr[i] + ":\n@\n"
+            allMovieString += movieTimesArr[i].substr(9) + "\n---\n"
         }
 
         context.res.json({
