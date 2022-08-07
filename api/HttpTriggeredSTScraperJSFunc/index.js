@@ -23,7 +23,7 @@ module.exports = async function (context, req) {
         }
 
         for (let i = 0; i < movieTitlesArr.length; i++) {
-            allMovieString += movieTitlesArr[i].toLocaleUpperCase() + ":\n@\n" + movieTimesArr[i] + "\n"
+            allMovieString += movieTitlesArr[i].toLocaleUpperCase() + ":\n@\n" + movieTimesArr[i] + "\n***\n"
         }
 
     } catch (error) {
