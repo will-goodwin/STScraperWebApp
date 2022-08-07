@@ -12,18 +12,18 @@
 </head>
  
 <body>
- <section class="red">
-     <main>
+  <section class="red">
+    <main>
       <h1>NYC<br>Showtimes<br>Today:</h1>
       <p><b id="name"></b></p>
-     </main>
-      <script>
-     (async function() {
-         const { text } = await( await fetch(`/api/HttpTriggeredSTScraperJSFunc`)).json();
-         document.querySelector('#name').textContent = text;
-     }())
-     </script>
- </section>
+    </main>
+    <script>
+      (async function() {
+        const { text } = await( await fetch(`/api/HttpTriggeredSTScraperJSFunc`)).json();
+        document.querySelector('#name').textContent = text;
+      }())
+    </script>
+  </section>
 </body>
  
 </html>
