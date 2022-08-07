@@ -28,26 +28,12 @@
     font-size: 1.5em;
   }
    script, b, p {
+    white-space: pre-wrap;
     text-align: center;
   }
    .wrap {
     overflow: hidden;
     position: relative;
-  }
-   .content {
-    position: relative;
-  }
-  
-  .bubble::after {
-    content: '';
-    border-top-left-radius: 50% 100%;
-    border-top-right-radius: 50% 100%;
-    position:absolute;
-    bottom: 0;
-    height: 85%;
-    width: 100%;
-    background-color: red;
-    z-index: -1;
   }
   
   .blue {
